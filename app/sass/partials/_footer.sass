@@ -1,0 +1,28 @@
+.footer
+	background-color: white
+	background-image: linear-gradient(to top, transparent 0%, transparent 100%)
+	box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1)
+	max-width: $site_width
+	margin: -63px auto 0
+	&__content
+		height: 63px
+		width: 620px
+		margin: 0 auto
+		display: flex
+		align-items: center
+		text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85)
+		color: $text_footer
+
+.lock
+	font-weight: 600
+	line-height: 24px
+	padding-left: 30px
+	background: url(../img/locked.png) no-repeat center left
+	&:hover
+		background: url(../img/unlocked.png) no-repeat center left
+
+.copy
+	margin-left: 63px
+	font-size: 12px
+	font-weight: 300
+	color: $text_copy
