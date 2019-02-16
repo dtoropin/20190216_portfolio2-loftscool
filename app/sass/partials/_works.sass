@@ -1,0 +1,20 @@
+.works
+	&__block
+		padding: 0 48px 0 42px
+	&__row
+		background: url(../img/briefcase-icon.png) no-repeat center left
+		&::after
+			content: ''
+			display: block
+			height: 2px
+			background-color: #f6f5f4
+			border-radius: 1px
+			box-shadow: inset 0 1px 1px rgba(128, 128, 128, 0.29), 0 0 2.6px 0.5px rgba(251, 251, 251, 0.75)
+		&:last-child::after
+			display: none
+	&__text
+		padding: 18px 25px 36px 97px
+	&__title
+		font-weight: 600
+	&__subscribe
+		font-weight: 400
