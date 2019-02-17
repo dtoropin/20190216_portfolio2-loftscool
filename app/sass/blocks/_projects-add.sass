@@ -1,0 +1,24 @@
+.projects-add
+	position: relative
+	background-image: linear-gradient(to top, #edebea 0%, #fbf9f9 94%, white 100%)
+	width: 166px
+	height: 134px
+	&__icon
+		margin: 0 auto 14px
+		width: 55px
+		height: 55px
+		background: url(../img/polaroid-icon.png) no-repeat center
+	&__link
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		padding-top: 25px
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75)
+		font-weight: 600
+		line-height: 22px
+		&:hover
+			background-image: linear-gradient(to top, #c2c0c0 0%, #e3e1e1 86%, #e3e1e1 87%, #e8e7e7 100%)
+			& > .projects-add__icon
+				background: url(../img/polaroid-icon-hover.png) no-repeat center

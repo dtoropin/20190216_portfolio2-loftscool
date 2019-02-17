@@ -1,0 +1,40 @@
+.projects-item
+	width: 168px
+	background-color: white
+	border: 1px solid #b6b6b6
+	border-radius: 5px
+	box-shadow: 0 2px 1px rgba(9, 9, 9, 0.07)
+	text-align: center
+	&__img
+		position: relative
+		box-shadow: 0 2px 1px rgba(9, 9, 9, 0.07)
+		&:hover > .projects-item__overlay
+			display: block
+	&__overlay
+		display: none
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		background-color: rgba(111,109,109,.5)
+		&-link
+			position: absolute
+			border: 2px solid white
+			border-radius: 4px
+			display: inline-block
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			color: #ffffff
+			padding: 3px 15px
+			text-transform: uppercase
+			font-weight: 600
+	&__title
+		background-color: rgba(41,40,40,.07)
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75)
+		font-size: 13px
+		font-weight: 600
+		padding: 10px 0 9px
+	&__subscribtion
+		padding: 8px 12px
