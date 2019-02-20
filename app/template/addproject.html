@@ -1,0 +1,62 @@
+<div class="addproject">
+	<h4 class="addproject__title">
+		Добавление проекта
+	</h4>
+	<form action="addproject.php" class="addprojectForm">
+		<div class="alertErrorAdd">
+			<span class="alertErrorAdd__close"></span>
+			<h4 class="alertErrorAdd__title">Ошибка!</h4>
+			<p class="alertErrorAdd__text">Невозможно добавить проект.</p>
+		</div>
+		<span class="addprojectForm__close"></span>
+		<div class="addprojectForm__item">
+			<p class="addprojectForm__label">Название проекта</p>
+			<input type="text"
+				name="name"
+				class="addprojectForm__input"
+				placeholder="Введите название"
+				qtip-text="введите название"
+			>
+		</div><!-- end .addprojectForm__item -->
+
+		<div class="addprojectForm__item">
+			<p class="addprojectForm__label">Картинка проекта</p>
+			<div class="inputFile">
+				<input type="file"
+					name="file"
+					id="file"
+					class="addprojectForm__input inputFile__input"
+					qtip-text="изображение"
+				>
+				<span class="inputFile__span">Загрузите изображение</span>
+				<label for="file">
+					<i class="inputFile__download-icon"></i>
+				</label>
+			</div><!-- end .inputFile -->
+		</div><!-- end .addprojectForm__item -->
+
+		<div class="addprojectForm__item">
+			<p class="addprojectForm__label">URL проекта</p>
+			<input type="text"
+				name="url"
+				class="addprojectForm__input"
+				placeholder="Добавьте ссылку"
+				qtip-text="ссылка на проект"
+			>
+		</div><!-- end .addprojectForm__item -->
+
+		<div class="addprojectForm__item">
+			<p class="addprojectForm__label">Описание</p>
+			<textarea type="text"
+				name="subscription" 
+				class="addprojectForm__input addprojectForm__input--textarea"
+				placeholder="Пара слов о Вашем проекте"
+				qtip-text="описание проекта"
+			></textarea>
+		</div><!-- end .addprojectForm__item -->
+
+		<button class="btn btn--green" type="submit">
+			Добавить
+		</button>
+	</form>
+</div><!-- end .addproject -->

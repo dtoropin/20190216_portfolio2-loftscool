@@ -1,0 +1,39 @@
+.addproject
+	&__title
+		color: #f8f7f6
+		font-size: 12px
+		font-weight: 300
+		background: transparent
+
+.addprojectForm
+	position: relative
+	width: 364px
+	padding: 24px 21px 27px
+	background-color: #f5f4f3
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0.5) 100%)
+	border: 1px solid #c3c2c2
+	border-radius: 4px
+	box-shadow: 0 11px 27px rgba(159, 159, 159, 0.75), inset 0 6px 6px white
+	&__close
+		position: absolute
+		top: 2px
+		right: 2px
+		display: block
+		padding: 5px
+		width: 14px
+		height: 14px
+		background: url(../img/close-grey.png) no-repeat center
+		cursor: pointer
+	&__label
+		color: $text_color
+		margin-bottom: 10px
+	&__input
+		font-size: 12px
+		+input
+		&.error
+			border: 1px solid #e0ad9a
+		&::placeholder
+			+placeholder
+		&--textarea
+			height: 111px
+			resize: none
