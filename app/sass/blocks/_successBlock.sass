@@ -1,0 +1,31 @@
+.successBlock
+	display: none
+	position: relative
+	width: 364px
+	background-color: #f5f4f3
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.5) 100%)
+	border: 1px solid #c3c2c2
+	border-radius: 4px
+	box-shadow: 0 11px 27px rgba(159, 159, 159, 0.75), inset 0 6px 6px white
+	padding: 21px 26px
+	&__close
+		position: absolute
+		top: 2px
+		right: 2px
+		display: block
+		padding: 5px
+		width: 11px
+		height: 11px
+		background: url(../img/close-grey.png) no-repeat center
+		cursor: pointer
+	&__alert
+		background-color: rgba(73, 187, 123, 0.33)
+		border: 1px solid #49bb7b
+		border-radius: 4px
+		color: #49bb7b
+		padding: 10px
+	&__title
+		font-size: 16px
+		font-weight: 600
+	&__text
+		font-weight: 400
