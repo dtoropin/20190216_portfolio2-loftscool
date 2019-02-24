@@ -5,24 +5,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="icon" href="img/favicon.png">
-	<title>Страница обратной связи</title>
+	<title>Страница авторизации</title>
 	//= template/css.html
-	<link rel="stylesheet" href="css/contactme.min.css">
+	<link rel="stylesheet" href="css/login.min.css">
 </head>
 <body>
 	<div class="wrapper">
-		//= template/header.html
-		<div class="content">
-			//= template/aside.html
-			<main class="main">
-				//= template/contacts.html
-			</main>
-		</div><!-- end .content -->
+		<div class="login">
+			<h2 class="login__head">Авторизируйтесь</h2>
+			//= template/loginForm.html
+		</div><!-- end .login -->
 	</div><!-- end .wrapper -->
 	//= template/footer.html
 	
-	//= template/successBlock.html
 	//= template/scripts.html
-	<script src="js/contactme.min.js"></script>
+	<script src="js/login.min.js"></script>
 </body>
 </html>

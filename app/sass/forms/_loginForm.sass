@@ -1,0 +1,21 @@
+.loginForm
+	padding: 39px
+	background-color: #f5f4f3
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.5) 100%)
+	border: 1px solid #c3c2c2
+	border-radius: 5px
+	box-shadow: 0 11px 27px rgba(159, 159, 159, 0.75), inset 0 6px 6px white
+	&__input
+		+input
+		padding-left: 72px
+		font-size: 12px
+		font-weight: 300
+		margin-bottom: 24px
+		&.error
+			border: 1px solid #e0ad9a
+		&::placeholder
+			+placeholder
+		&--email
+			background: url(../img/email-icon-grey.png) no-repeat 14px center
+		&--key
+			background: url(../img/key-icon-grey.png) no-repeat 14px center
