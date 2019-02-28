@@ -11,11 +11,11 @@
 		<span class="addprojectForm__close"></span>
 		<div class="addprojectForm__item">
 			<p class="addprojectForm__label">Название проекта</p>
-			<input type="text"
+			<input type="text" autofocus
 				name="name"
 				class="addprojectForm__input"
 				placeholder="Введите название"
-				qtip-text="введите название"
+				data-tooltip="введите название"
 			>
 		</div><!-- end .addprojectForm__item -->
 
@@ -26,7 +26,7 @@
 					name="file"
 					id="file"
 					class="addprojectForm__input inputFile__input"
-					qtip-text="изображение"
+					data-tooltip="изображение"
 				>
 				<span class="inputFile__span">Загрузите изображение</span>
 				<label for="file">
@@ -41,7 +41,7 @@
 				name="url"
 				class="addprojectForm__input"
 				placeholder="Добавьте ссылку"
-				qtip-text="ссылка на проект"
+				data-tooltip="ссылка на проект"
 			>
 		</div><!-- end .addprojectForm__item -->
 
@@ -51,7 +51,7 @@
 				name="subscription" 
 				class="addprojectForm__input addprojectForm__input--textarea"
 				placeholder="Пара слов о Вашем проекте"
-				qtip-text="описание проекта"
+				data-tooltip="описание проекта"
 			></textarea>
 		</div><!-- end .addprojectForm__item -->
 
