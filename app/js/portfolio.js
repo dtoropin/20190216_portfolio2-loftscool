@@ -5,7 +5,7 @@
 
 	var _MODAL = null,
 		_form = $('.addprojectForm'),
-		_elements = _form.find('input, textarea');
+		_elements = _form.find('input, textarea').not('input[type="hidden"]');
 
 	var init = function () {
 		_setUpListners();
@@ -22,7 +22,8 @@
 		e.preventDefault();
 		_MODAL = $('.addproject').bPopup({
 			modalClose: false,
-			positionStyle: 'fixed'
+			positionStyle: 'fixed',
+			escClose: false
 		});
 	};
 
@@ -43,10 +44,9 @@
 		e.preventDefault();
 
 		var url = '/php/addproject.php',
-			form = e.target,
-			data = new FormData(form);
+			data = new FormData(this);
 
-		if(!workingForm.validate(form)) return false;
+		if(!workingForm.validate(_form)) return false;
 
 		workingForm.ajax(url, data).done(function (res) {
 			if (res.ans === 'OK') {
@@ -59,18 +59,15 @@
 				});
 			} else {
 				$.each(res.error, function (i, name) {
-					$(form).find('input[name="' + name + '"]').addClass('error');
+					_form.find('input[name="' + name + '"]').addClass('error');
 				});
-				var elems = $(form).find('input, textarea').not('input[type="hidden"]');
-				workingForm.qtipShow(elems);
+				workingForm.qtipShow(_elements);
 				// добавление класса error элементам из ответа сервера
 				// проход по элементам с классом error - workingForm.qtipShow(elems);
-				// text - data-uncorrect-tooltip
 			}
 		})
 		.fail(function () {
 			$('.alertErrorAdd').show();
-			console.log(error);
 		});
 	};
 

@@ -2,7 +2,7 @@
 		<h2 class="section-title">
 			У вас интересный проект? Напишите мне
 		</h2>
-		<form action="#" class="contactsForm">
+		<form class="contactsForm">
 			<div class="alertErrorAdd">
 				<span class="alertErrorAdd__close"></span>
 				<h4 class="alertErrorAdd__title">Ошибка!</h4>
@@ -16,17 +16,17 @@
 						name="name"
 						class="contactsForm__input"
 						placeholder="Как к Вам обращаться"
-						qtip-text="введите имя"
+						data-tooltip="введите имя"
 					>
 				</div><!-- end .contactsForm__item -->
 				<div class="contactsForm__item">
 					<p class="contactsForm__label">Email</p>
-					<input type="email"
+					<input type="text"
 						name="email"
 						class="contactsForm__input"
 						placeholder="Куда мне писать"
-						qtip-text="введите email"
-						qtip-position="right"
+						data-tooltip="введите email"
+						data-tooltip-position="right"
 					>
 				</div><!-- end .contactsForm__item -->
 			</div><!-- end .contactsForm__row -->
@@ -37,19 +37,21 @@
 					name="message" 
 					class="contactsForm__input contactsForm__input--textarea"
 					placeholder="Кратко в чем суть"
-					qtip-text="ваш вопрос"
+					data-tooltip="ваш вопрос"
 				></textarea>
 			</div><!-- end .contactsForm__item -->
 
 			<div class="contactsForm__row">
-				<div class="contactsForm__captcha"></div>
+				<div class="contactsForm__captcha">
+					<img src="/php/captcha.php" alt="captcha">
+				</div>
 				<div class="contactsForm__item">
 					<input type="text"
 						name="captcha"
 						class="contactsForm__input"
 						placeholder="Введите код"
-						qtip-text="код капчи"
-						qtip-position="right"
+						data-tooltip="код капчи"
+						data-tooltip-position="right"
 					>
 				</div><!-- end .contactsForm__item -->
 			</div><!-- end .contactsForm__row -->

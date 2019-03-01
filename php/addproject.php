@@ -1,7 +1,7 @@
 <?php
+require_once 'config.php';
 $result['ans'] = 'OK';
 $result['error'] = [];
-$upload = $_SERVER['DOCUMENT_ROOT'] . '/build/img/projects/';
 
 if(!filter_var('http://' . htmlspecialchars($_POST['url']), FILTER_VALIDATE_URL))
 {
@@ -25,7 +25,7 @@ if(!empty($_FILES['file']['tmp_name']))
 		array_push($result['error'], 'file');
 		die(json_encode($result));
 	}
-	$path = $upload . $_FILES['file']['name'];
+	$path = UPLOAD . $_FILES['file']['name'];
 	if (copy($_FILES['file']['tmp_name'], $path)) $file_name = $_FILES['file']['name'];
 	$result['file'] = $file_name;
 }
