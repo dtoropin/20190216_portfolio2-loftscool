@@ -24,3 +24,20 @@
 =placeholder
 	color: #c7c6c6
 	font-size: 12px
+
+// media
+=lg()
+	@media screen and (max-width: $break_lg)
+		@content
+
+=md()
+	@media screen and (max-width: $break_md)
+		@content
+
+=sm()
+	@media screen and (max-width: $break_sm)
+		@content
+
+=xs()
+	@media screen and (max-width: $break_xs)
+		@content

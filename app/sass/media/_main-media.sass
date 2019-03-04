@@ -1,0 +1,119 @@
++md
+	.header__content
+		padding: 11px 40px
+	.content
+		flex-direction: column-reverse
+		align-items: center
+		width: auto
+
+	.hamburger
+		display: block
+	.social
+		margin-left: auto
+
+	.menu
+		display: none
+		position: absolute
+		top: 90px
+		right: 23px
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), inset 0 -2px 3px rgba(45, 45, 45, 0.05), inset 0 0 3px #9c9c9c
+		z-index: 20000
+		overflow: visible
+		&::before
+			content: ''
+			position: absolute
+			top: -20px
+			right: 23px
+			display: block
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 0 15px 20px 15px
+			border-color: transparent transparent #ffffff transparent
+			box-shadow: 0 2px 1px rgba(17, 17, 17, 0.07), inset 0 -2px 3px rgba(45, 45, 45, 0.05), inset 0 0 3px #f6f6f7
+		&__link
+			padding-right: 28px
+
+	.aside
+		width: 650px
+	.contacts
+		+clearfix
+		&__item
+			float: left
+			width: 215px
+			border-left: 1px solid #9c9c9c
+			&:first-child
+				border-left: none
+		&__item-head
+			display: none
+		&__img
+			margin-right: 20px
+
++sm
+	body
+		min-width: 340px
+	.wrapper__block
+		padding-bottom: 90px
+	.main
+		width: auto
+		max-width: 650px
+		& > section
+			max-width: 400px
+	.aside
+		width: 340px
+	.contacts
+		max-width: 400px
+		box-sizing: border-box
+		margin: 0 auto 16px
+		background-color: white
+		background-image: linear-gradient(to top, rgba(233, 231, 231, 0.2) 0%, transparent 100%)
+		border: 1px solid #d6d5d3
+		border-radius: 0
+		box-shadow: inset 0 2px 2px rgba(114, 112, 112, 0.1), 0 0 1px rgba(255, 255, 255, 0.15)
+		&__item
+			float: none
+			width: 100%
+		&__link
+			font-size: 24px
+			padding: 8px 0 8px 110px
+			&--email,
+			&--email:hover
+				background: url(../img/email-icon-big.png) no-repeat 20px center
+			&--phone,
+			&--phone:hover
+				background: url(../img/phone-icon-big.png) no-repeat 20px center
+			&--skype,
+			&--skype:hover
+				background: url(../img/skype-icon-big.png) no-repeat 20px center
+	.social
+		position: absolute
+		bottom: 16px
+		left: 50%
+		transform: translateX(-50%)
+		&__item
+			margin-left: 16px
+			&:first-child
+				margin-left: 0
+		&__link
+			display: block
+			width: 73px
+			height: 75px
+			&--fb_icon
+				background: url('../img/social/icon_sprites-big.png') -5px -5px
+				&:hover
+					background: url('../img/social/icon_sprites-big.png') -5px -90px
+			&--git_icon
+				background: url('../img/social/icon_sprites-big.png') -5px -175px
+				&:hover
+					background: url('../img/social/icon_sprites-big.png') -5px -260px
+			&--tw_icon
+				background: url('../img/social/icon_sprites-big.png') -5px -345px
+				&:hover
+					background: url('../img/social/icon_sprites-big.png') -5px -430px
+			&--vk_icon
+				background: url('../img/social/icon_sprites-big.png') -5px -515px
+				&:hover
+					background: url('../img/social/icon_sprites-big.png') -5px -600px
+	.footer__content
+		width: auto
+		padding: 0 10px

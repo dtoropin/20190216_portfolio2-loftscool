@@ -20,10 +20,12 @@
 
 	var _showModal = function (e) {
 		e.preventDefault();
+		if($(window).width() <= 400) var position = ['18px', 'auto'];
 		_MODAL = $('.addproject').bPopup({
 			modalClose: false,
 			positionStyle: 'fixed',
-			escClose: false
+			escClose: false,
+			position: position
 		});
 	};
 

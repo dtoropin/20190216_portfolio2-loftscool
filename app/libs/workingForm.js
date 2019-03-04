@@ -51,6 +51,7 @@ var workingForm = (function () {
 	};
 
 	var qtipShow = function (elems) {
+		if($(window).width() <= 768) return false;
 		$.each(elems, function (i, val) {
 			if (val.classList.contains('error')) {
 				var pos = val.hasAttribute('data-tooltip-position')
