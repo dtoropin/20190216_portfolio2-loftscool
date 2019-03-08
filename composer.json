@@ -1,0 +1,24 @@
+{
+	"name": "loftchool/portfolio2",
+	"description": "description_text",
+	"minimum-stability": "stable",
+	"license": "proprietary",
+	"authors": [
+		{
+			"name": "D.Toropin",
+			"email": "denis.toropin@yandex.ru"
+		}
+	],
+	"config": {
+		"vendor-dir": "vendor"
+	},
+	"autoload": {
+		"classmap": [
+			"php/classes"
+		]
+	},
+	"require": {
+		"klein/klein": "2.1.*",
+		"twig/twig": "2.6.*"
+	}
+}

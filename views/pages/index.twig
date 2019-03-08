@@ -1,0 +1,127 @@
+{% extends 'main_template.twig' %}
+
+{% block content %}
+<section class="info">
+	<h2 class="section-title">
+		Основная информация
+	</h2>
+	<div class="info-block">
+		<div class="info-block__logo">
+			<img src="{{ config.base_url }}build/img/avatar.jpg" alt="avatar">
+		</div><!-- end .info-block__logo -->
+		<div class="info-block__text">
+			<div class="info-block__row">
+				<p class="info-block__head">Меня&nbsp;зовут:</p>
+				<p class="info-block__subscription">Иванов Андрей Степанович</p>
+			</div>
+
+			<div class="info-block__row">
+				<p class="info-block__head">Мой&nbsp;возраст:</p>
+				<p class="info-block__subscription">25 лет</p>
+			</div>
+
+			<div class="info-block__row">
+				<p class="info-block__head">Мой&nbsp;город:</p>
+				<p class="info-block__subscription">Санкт-Петербург, Россия</p>
+			</div>
+
+			<div class="info-block__row">
+				<p class="info-block__head">Моя&nbsp;специализация:</p>
+				<p class="info-block__subscription">FRONTEND разработчик</p>
+			</div>
+
+			<div class="info-block__row">
+				<p class="info-block__head">Ключевые&nbsp;навыки:</p>
+				<div class="info-block__subscription">
+					<div class="info-block__skill skill">HTML</div>
+					<div class="info-block__skill skill">CSS</div>
+					<div class="info-block__skill skill">JAVASCRIPT</div>
+					<div class="info-block__skill skill">GIT</div>
+					<div class="info-block__skill skill">GULP</div>
+					<div class="info-block__skill skill">PHP</div>
+					<div class="info-block__skill skill">REACT</div>
+					<div class="info-block__skill skill">JQUERY</div>
+				</div>
+			</div>
+		</div><!-- end .info-block__text -->
+	</div><!-- end .info-block -->
+</section><!-- end .info -->
+<section class="works">
+	<h2 class="section-title">
+		Опыт работы
+	</h2>
+	<div class="works__block">
+		<div class="section__row works__row--briefcase">
+			<div class="section__text">
+				<p class="section__title">
+					"ИП Боровицкий" - Продавец дисков
+				</p>
+				<p class="section__subscribe">
+					Сентябрь 2005 - Август 2008
+				</p>
+			</div>
+		</div><!-- end .section__row -->
+
+		<div class="section__row  works__row--briefcase">
+			<div class="section__text">
+				<p class="section__title">
+					"ООО Системы безопастности" - Системный администратор
+				</p>
+				<p class="section__subscribe">
+					Июнь 2008 - Июль 2010
+				</p>
+			</div>
+		</div><!-- end .section__row -->
+
+		<div class="section__row  works__row--briefcase">
+			<div class="section__text">
+				<p class="section__title">
+					"Магнит, Розничная сеть" - Ведущий аналитик по внедрению Oracle
+				</p>
+				<p class="section__subscribe">
+					Август 2011 - Октябрь 2012
+				</p>
+			</div>
+		</div><!-- end .section__row -->
+	</div><!-- end .works__block -->
+</section><!-- end .works -->
+<section class="education">
+	<h2 class="section-title">
+		Образование
+	</h2>
+	<div class="education__block">
+		<div class="section__row education__row--school">
+			<div class="section__text">
+				<p class="section__title">
+					Полное среднее. Физико-математический лицей № 30
+				</p>
+				<p class="section__subscribe">
+					1994 - 2004
+				</p>
+			</div>
+		</div><!-- end .section__row -->
+
+		<div class="section__row education__row--graduate">
+			<div class="section__text">
+				<p class="section__title">
+					Незаконченное высшее. СПБГУ ИТМО
+				</p>
+				<p class="section__subscribe">
+					Октябрь 2012 - по настоящее время
+				</p>
+			</div>
+		</div><!-- end .section__row -->
+
+		<div class="section__row education__row--file">
+			<div class="section__text">
+				<p class="section__title">
+					Курсы Loftschool.ru
+				</p>
+				<p class="section__subscribe">
+					Ноябрь 2014 - по настоящее время
+				</p>
+			</div>
+		</div><!-- end .section__row -->
+	</div><!-- end .education__block -->
+</section><!-- end .education -->
+{% endblock %}
