@@ -4,19 +4,29 @@
 <body>
 <div class="wrapper">
 	<div class="wrapper__block">
-		{% include '_parts/header.twig' %}
-		<div class="content">
-			<aside class="aside">
-				{% include '_parts/menu.twig' %}
-				{% include '_parts/contacts.twig' %}
-			</aside>
-			<main class="main">
-				{% block content %} {% endblock %}
-			</main>
-		</div><!-- end .content -->
+		{% if page == 'login' %}
+			{% block login %}{% endblock %}
+		{% else %}
+			{% include '_parts/header.twig' %}
+			<div class="content">
+				<aside class="aside">
+					{% include '_parts/menu.twig' %}
+					{% include '_parts/contacts.twig' %}
+				</aside>
+				<main class="main">
+					{% block content %}{% endblock %}
+				</main>
+			</div><!-- end .content -->
+		{% endif %}
 	</div><!-- end .wrapper__block -->
 </div><!-- end .wrapper -->
 {% include '_parts/footer.twig' %}
+{% block addProject %}{% endblock %}
+
+{% if (page == 'portfolio') or (page == 'contactme') %}
+	{% include '_parts/success.twig' %}
+{% endif %}
+
 {% include '_parts/scripts.twig' %}
 </body>
 </html>

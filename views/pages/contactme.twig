@@ -1,0 +1,68 @@
+{% extends 'main_template.twig' %}
+
+{% block content %}
+	<section class="contacts">
+		<h2 class="section-title">
+			У вас интересный проект? Напишите мне
+		</h2>
+		<form class="contactsForm">
+			<div class="alertErrorAdd">
+				<span class="alertErrorAdd__close"></span>
+				<h4 class="alertErrorAdd__title">Ошибка!</h4>
+				<p class="alertErrorAdd__text">Невозможно отправить письмо.</p>
+			</div><!-- end .alertErrorAdd -->
+
+			<div class="contactsForm__row contactsForm__row--sm">
+				<div class="contactsForm__item">
+					<p class="contactsForm__label">Имя</p>
+					<input type="text" autofocus
+								 name="name"
+								 class="contactsForm__input"
+								 placeholder="Как к Вам обращаться"
+								 data-tooltip="введите имя"
+					>
+				</div><!-- end .contactsForm__item -->
+				<div class="contactsForm__item">
+					<p class="contactsForm__label">Email</p>
+					<input type="text"
+								 name="email"
+								 class="contactsForm__input"
+								 placeholder="Куда мне писать"
+								 data-tooltip="введите email"
+								 data-tooltip-position="right"
+					>
+				</div><!-- end .contactsForm__item -->
+			</div><!-- end .contactsForm__row -->
+
+			<div class="contactsForm__item">
+				<p class="contactsForm__label">Сообщение</p>
+				<textarea type="text"
+									name="message"
+									class="contactsForm__input contactsForm__input--textarea"
+									placeholder="Кратко в чем суть"
+									data-tooltip="ваш вопрос"
+				></textarea>
+			</div><!-- end .contactsForm__item -->
+
+			<div class="contactsForm__row">
+				<div class="contactsForm__captcha">
+					<img src="/php/captcha.php" alt="captcha">
+				</div>
+				<div class="contactsForm__item">
+					<input type="text"
+								 name="captcha"
+								 class="contactsForm__input"
+								 placeholder="Введите код"
+								 data-tooltip="код капчи"
+								 data-tooltip-position="right"
+					>
+				</div><!-- end .contactsForm__item -->
+			</div><!-- end .contactsForm__row -->
+
+			<div class="contactsForm__row contactsForm__row--btn">
+				<button class="btn btn--green" type="submit">Отправить</button>
+				<button class="btn" type="reset">Очистить</button>
+			</div><!-- end .contactsForm__row -->
+		</form>
+	</section><!-- end .contacts -->
+{% endblock %}

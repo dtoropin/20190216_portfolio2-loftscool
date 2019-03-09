@@ -1,0 +1,38 @@
+{% extends 'main_template.twig' %}
+
+{% block login %}
+	<div class="login">
+		<h2 class="login__head">Авторизируйтесь</h2>
+		<form class="loginForm">
+			<div class="alertErrorAdd">
+				<span class="alertErrorAdd__close"></span>
+				<h4 class="alertErrorAdd__title">Ошибка!</h4>
+				<p class="alertErrorAdd__text">Проблемы с сервером..</p>
+			</div><!-- end .alertErrorAdd -->
+
+			<input type="text" name="email" autofocus
+						 class="loginForm__input loginForm__input--email"
+						 placeholder="Введите Email"
+						 data-tooltip="введите email"
+						 data-tooltip-position="right"
+			>
+			<input type="password" name="pass"
+						 class="loginForm__input loginForm__input--key"
+						 placeholder="Введите пароль"
+						 data-tooltip="введите пароль"
+						 data-tooltip-position="right"
+			>
+
+			<div class="inputCheckbox">
+				<input type="checkbox" name="remember"
+							 id="check"
+							 class="inputCheckbox__input"
+				>
+				<label for="check" class="inputCheckbox__checkbox"></label>
+				<span class="inputCheckbox__span">Запомнить меня?</span>
+			</div><!-- end .inputCheckbox -->
+
+			<button type="submit" class="btn btn--green">Войти</button>
+		</form>
+	</div><!-- end .login -->
+{% endblock %}

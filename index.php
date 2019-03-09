@@ -7,29 +7,37 @@ $templater = Templater::getInstance();
 $config = include_once 'config/config.php';
 
 $route->respond('GET', '/', function () use ($templater, $config) {
-	$data = array();
+	$data = [];
 	$data['config'] = $config;
-	$data['style'] = 'index';
+	$data['page'] = 'index';
 	$data['title'] = 'Главная страница | Обо мне';
 	return $templater->display('pages/index', $data);
 });
 
 $route->respond('GET', '/portfolio/?', function () use ($templater, $config) {
-	$data = array();
+	ORM::configure('sqlite:./database/portfolio.db');
+	$data = [];
+	$data['works'] = ORM::for_table('project')->find_many();
 	$data['config'] = $config;
-	$data['style'] = 'portfolio';
+	$data['page'] = 'portfolio';
 	$data['title'] = 'Страница моих работ';
 	return $templater->display('pages/portfolio', $data);
 });
 
-$route->respond('GET', '/contacts/?', function () use ($templater, $config) {
-	return 'Страница обратной связи!';
+$route->respond('GET', '/contactme/?', function () use ($templater, $config) {
+	$data = [];
+	$data['config'] = $config;
+	$data['page'] = 'contactme';
+	$data['title'] = 'Страница обратной связи';
+	return $templater->display('pages/contactme', $data);
 });
 
 $route->respond('GET', '/login/?', function () use ($templater, $config) {
-	return 'Страница авторизации!';
+	$data = [];
+	$data['config'] = $config;
+	$data['page'] = 'login';
+	$data['title'] = 'Авторизация';
+	return $templater->display('pages/login', $data);
 });
 
 $route->dispatch();
-
-// video 24:41

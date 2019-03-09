@@ -1,1 +1,4 @@
 <script src="{{ config.base_url }}build/js/main.min.js"></script>
+{% if page != 'index' %}
+	<script src="{{ config.base_url }}build/js/{{ page }}.min.js"></script>
+{% endif %}

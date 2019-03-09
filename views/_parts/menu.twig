@@ -1,12 +1,24 @@
 <nav class="menu">
 	<ul>
-		<li class="menu__item active"><a href="{{ config.base_url }}" class="menu__link">
+		<li class="menu__item
+		{% if page == 'index' %}
+			active
+		{% endif %}
+		"><a href="{{ config.base_url }}" class="menu__link">
 				Обо мне
 			</a></li>
-		<li class="menu__item"><a href="{{ config.base_url }}portfolio" class="menu__link">
+		<li class="menu__item
+		{% if page == 'portfolio' %}
+			active
+		{% endif %}
+		"><a href="{{ config.base_url }}portfolio" class="menu__link">
 				Мои Работы
 			</a></li>
-		<li class="menu__item"><a href="{{ config.base_url }}contacts" class="menu__link">
+		<li class="menu__item
+		{% if page == 'contactme' %}
+			active
+		{% endif %}
+		"><a href="{{ config.base_url }}contactme" class="menu__link">
 				Обратная связь
 			</a></li>
 	</ul>

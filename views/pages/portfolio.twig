@@ -1,85 +1,27 @@
 {% extends 'main_template.twig' %}
 
 {% block content %}
-<section class="projects">
+	<section class="projects">
 		<h2 class="section-title">
 			Мои работы
 		</h2>
 		<div class="projects__block">
-			<div class="projects-item">
-				<div class="projects-item__img">
-					<img src="{{ config.base_url }}build/img/projects/site-1.jpg" alt="site">
-					<div class="projects-item__overlay">
-						<a href="http://a-industry.ru" target="_blank" class="projects-item__overlay-link">open</a>
+			{% for work in works %}
+				<div class="projects-item">
+					<div class="projects-item__img">
+						<img src="{{ config.base_url }}build/img/projects/{{ work.img }}" alt="site">
+						<div class="projects-item__overlay">
+							<a href="http://{{ work.link }}" target="_blank" class="projects-item__overlay-link">open</a>
+						</div>
 					</div>
-				</div>
-				<div class="projects-item__title">
-					a-industry.ru
-				</div>
-				<p class="projects-item__subscribtion">
-					Корпоративный и в тоже время продающий сайт строительной компании a-industry.
-				</p>
-			</div><!-- end .projects-item__item -->
-
-			<div class="projects-item">
-				<div class="projects-item__img">
-					<img src="{{ config.base_url }}build/img/projects/site-2.jpg" alt="site">
-					<div class="projects-item__overlay">
-						<a href="http://домгазобетон.рф" target="_blank" class="projects-item__overlay-link">open</a>
+					<div class="projects-item__title">
+						{{ work.title }}
 					</div>
-				</div>
-				<div class="projects-item__title">
-					домгазобетон.рф
-				</div>
-				<p class="projects-item__subscribtion">
-					Продающая страница для компании ledenland.
-				</p>
-			</div><!-- end .projects-item__item -->
-
-			<div class="projects-item">
-				<div class="projects-item__img">
-					<img src="{{ config.base_url }}build/img/projects/site-3.jpg" alt="site">
-					<div class="projects-item__overlay">
-						<a href="http://crmconsulting.biz" target="_blank" class="projects-item__overlay-link">open</a>
-					</div>
-				</div>
-				<div class="projects-item__title">
-					crmconsulting.biz
-				</div>
-				<p class="projects-item__subscribtion">
-					Лендинг компании «СRM Consulting» специализирующейся на точной настройке Битрикс24 под бизнес.
-				</p>
-			</div><!-- end .projects-item__item -->
-
-			<div class="projects-item">
-				<div class="projects-item__img">
-					<img src="{{ config.base_url }}build/img/projects/site-4.jpg" alt="site">
-					<div class="projects-item__overlay">
-						<a href="http://landingsloft.ru" target="_blank" class="projects-item__overlay-link">open</a>
-					</div>
-				</div>
-				<div class="projects-item__title">
-					landingsloft.ru
-				</div>
-				<p class="projects-item__subscribtion">
-					Сайт по услугам разработки продающих лендингов.
-				</p>
-			</div><!-- end .projects-item__item -->
-
-			<div class="projects-item">
-				<div class="projects-item__img">
-					<img src="{{ config.base_url }}build/img/projects/site-5.jpg" alt="site">
-					<div class="projects-item__overlay">
-						<a href="http://yasnow.biz" target="_blank" class="projects-item__overlay-link">open</a>
-					</div>
-				</div>
-				<div class="projects-item__title">
-					yasnow.biz
-				</div>
-				<p class="projects-item__subscribtion">
-					Landing page по продажи франшизы снежного бизнеса.
-				</p>
-			</div><!-- end .projects-item__item -->
+					<p class="projects-item__subscribtion">
+						{{ work.description }}
+					</p>
+				</div><!-- end .projects-item__item -->
+			{% endfor %}
 
 			<div class="projects-item projects-add">
 				<a href="#" class="projects-add__link">
@@ -89,4 +31,69 @@
 			</div><!-- end .projects-item -->
 		</div><!-- end .projects__block -->
 	</section><!-- end .projects -->
+{% endblock %}
+
+{% block addProject %}
+	<div class="addproject">
+		<h4 class="addproject__title">
+			Добавление проекта
+		</h4>
+		<form action="addproject.php" class="addprojectForm">
+			<div class="alertErrorAdd">
+				<span class="alertErrorAdd__close"></span>
+				<h4 class="alertErrorAdd__title">Ошибка!</h4>
+				<p class="alertErrorAdd__text">Невозможно добавить проект.</p>
+			</div><!-- end .alertErrorAdd -->
+			<span class="addprojectForm__close"></span>
+			<div class="addprojectForm__item">
+				<p class="addprojectForm__label">Название проекта</p>
+				<input type="text" autofocus
+							 name="name"
+							 class="addprojectForm__input"
+							 placeholder="Введите название"
+							 data-tooltip="введите название"
+				>
+			</div><!-- end .addprojectForm__item -->
+
+			<div class="addprojectForm__item">
+				<p class="addprojectForm__label">Картинка проекта</p>
+				<div class="inputFile">
+					<input type="file"
+								 name="file"
+								 id="file"
+								 class="addprojectForm__input inputFile__input"
+								 data-tooltip="изображение"
+					>
+					<span class="inputFile__span">Загрузите изображение</span>
+					<label for="file">
+						<i class="inputFile__download-icon"></i>
+					</label>
+				</div><!-- end .inputFile -->
+			</div><!-- end .addprojectForm__item -->
+
+			<div class="addprojectForm__item">
+				<p class="addprojectForm__label">URL проекта</p>
+				<input type="text"
+							 name="url"
+							 class="addprojectForm__input"
+							 placeholder="Добавьте ссылку"
+							 data-tooltip="ссылка на проект"
+				>
+			</div><!-- end .addprojectForm__item -->
+
+			<div class="addprojectForm__item">
+				<p class="addprojectForm__label">Описание</p>
+				<textarea type="text"
+									name="subscription"
+									class="addprojectForm__input addprojectForm__input--textarea"
+									placeholder="Пара слов о Вашем проекте"
+									data-tooltip="описание проекта"
+				></textarea>
+			</div><!-- end .addprojectForm__item -->
+
+			<button class="btn btn--green" type="submit">
+				Добавить
+			</button>
+		</form>
+	</div><!-- end .addproject -->
 {% endblock %}
