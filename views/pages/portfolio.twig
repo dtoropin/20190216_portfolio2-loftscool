@@ -23,12 +23,14 @@
 				</div><!-- end .projects-item__item -->
 			{% endfor %}
 
-			<div class="projects-item projects-add">
-				<a href="#" class="projects-add__link">
-					<div class="projects-add__icon"></div>
-					Добавить проект
-				</a>
-			</div><!-- end .projects-item -->
+			{% if admin %}
+				<div class="projects-item projects-add">
+					<a href="#" class="projects-add__link">
+						<div class="projects-add__icon"></div>
+						Добавить проект
+					</a>
+				</div><!-- end .projects-item -->
+			{% endif %}
 		</div><!-- end .projects__block -->
 	</section><!-- end .projects -->
 {% endblock %}

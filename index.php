@@ -1,6 +1,8 @@
 <?php
 
 require_once 'vendor/autoload.php';
+session_start();
+if(!isset($_SESSION['admin'])) $_SESSION['admin'] = $_COOKIE['admin'] ? true : false;
 
 $route = new \Klein\Klein();
 $templater = Templater::getInstance();
@@ -8,6 +10,7 @@ $config = include_once 'config/config.php';
 
 $route->respond('GET', '/', function () use ($templater, $config) {
 	$data = [];
+	$data['admin'] = $_SESSION['admin'];
 	$data['config'] = $config;
 	$data['page'] = 'index';
 	$data['title'] = 'Главная страница | Обо мне';
@@ -17,6 +20,7 @@ $route->respond('GET', '/', function () use ($templater, $config) {
 $route->respond('GET', '/portfolio/?', function () use ($templater, $config) {
 	ORM::configure('sqlite:./database/portfolio.db');
 	$data = [];
+	$data['admin'] = $_SESSION['admin'];
 	$data['works'] = ORM::for_table('project')->find_many();
 	$data['config'] = $config;
 	$data['page'] = 'portfolio';
@@ -26,6 +30,7 @@ $route->respond('GET', '/portfolio/?', function () use ($templater, $config) {
 
 $route->respond('GET', '/contactme/?', function () use ($templater, $config) {
 	$data = [];
+	$data['admin'] = $_SESSION['admin'];
 	$data['config'] = $config;
 	$data['page'] = 'contactme';
 	$data['title'] = 'Страница обратной связи';

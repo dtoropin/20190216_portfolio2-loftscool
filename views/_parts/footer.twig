@@ -1,8 +1,14 @@
 <footer class="footer">
 	<div class="footer__content">
-		<a href="{{ config.base_url }}login" class="lock">
-			вход
-		</a>
+		{% if admin %}
+			<a href="{{ config.base_url }}php/login.php?del" class="lock">
+				выход
+			</a>
+		{% else %}
+			<a href="{{ config.base_url }}login" class="lock">
+				вход
+			</a>
+		{% endif %}
 		<p class="copy">
 			© 2015. Это мой сайт, пожалуйста, не копируйте и не воруйте его
 		</p>

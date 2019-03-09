@@ -1,13 +1,13 @@
 <?php
 require_once 'config.php';
 
-session_start();
-
-if (isset($_GET['del']))
-{
-	unset($_SESSION['auth']);
+if (isset($_GET['del'])) {
+	session_start();
+	unset($_SESSION['admin']);
 	session_destroy();
+	setcookie ('admin', '', time() - 3600, '/');
 	header('Location: /');
+	die();
 }
 
 $result['ans'] = 'OK';
@@ -17,27 +17,26 @@ require_once '../vendor/j4mie/idiorm/idiorm.php';
 ORM::configure('sqlite:../database/portfolio.db');
 
 $res = ORM::for_table('user')->find_one(1);
-if(!$res) die(false);
+if (!$res) die(false);
 
 $result['ans'] = 'OK';
 if (isset($_POST['email'])
 	&& filter_var(htmlspecialchars($_POST['email']), FILTER_VALIDATE_EMAIL)
-	&& $res->user_name !== trim(htmlspecialchars($_POST['email'])))
-{
+	&& $res->name !== trim(htmlspecialchars($_POST['email']))) {
 	$result['ans'] = 'NOK';
 	array_push($result['error'], 'email');
 }
-if (isset($_POST['pass']) && $res->user_pass !== strtoupper(md5(trim(htmlspecialchars($_POST['pass'])))))
-{
+if (isset($_POST['pass']) && $res->pass !== md5(trim(htmlspecialchars($_POST['pass'])))) {
 	$result['ans'] = 'NOK';
 	array_push($result['error'], 'pass');
 }
-if (isset($_POST['remember']) && $_POST['remember'] === 'ON')
-{
-	// пишем 'adminTrue' в coocie на месяц :)
+if (isset($_POST['remember']) && $_POST['remember'] === 'ON') {
+	// пишем 'adminTrue' в cookie на месяц :)
+	setcookie ('admin', true, time() + (3600 * 24 * 30), '/');
 }
 
-if($result['ans'] === 'NOK') die(json_encode($result));
+if ($result['ans'] === 'NOK') die(json_encode($result));
+session_start();
+$_SESSION['admin'] = true;
 
-$_SESSION['auth'] = 'admin';
-die(json_encode($answer));
+die(json_encode($result));
