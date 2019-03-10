@@ -15,7 +15,10 @@
 			border: 1px solid #e0ad9a
 		&::placeholder
 			+placeholder
-		&--email
-			background: url(../img/email-icon-grey.png) no-repeat 14px center
-		&--key
-			background: url(../img/key-icon-grey.png) no-repeat 14px center
+	&__label
+		position: relative
+		& img
+			position: absolute
+			top: 50%
+			left: 15px
+			transform: translateY(-48%)
