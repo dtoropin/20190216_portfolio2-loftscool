@@ -2,6 +2,10 @@
 	<span class="successBlock__close b-close"></span>
 	<div class="successBlock__alert">
 		<h4 class="successBlock__title">Ура!</h4>
-		<p class="successBlock__text">Проект успешно добавлен.</p>
+		{% if page == 'portfolio' %}
+			<p class="successBlock__text">Проект успешно добавлен.</p>
+		{% elseif page == 'contactme' %}
+			<p class="successBlock__text">Ваше сообщение отправлено!</p>
+		{% endif %}
 	</div><!-- end .successBlock__alert -->
 </div><!-- end .successBlock -->

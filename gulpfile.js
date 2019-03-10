@@ -152,31 +152,31 @@ gulp.task('default', gulp.series('clean', 'build', gulp.parallel('webserver', 'w
 // final build project
 // public
 gulp.task('public:css', function () {
-	return gulp.src('build/css/*.*').pipe(gulp.dest('public/build/css/'))
+	return gulp.src('build/css/**/*.*').pipe(gulp.dest('public/build/css/'))
 });
 gulp.task('public:js', function () {
-	return gulp.src('build/js/*.*').pipe(gulp.dest('public/build/js/'))
+	return gulp.src('build/js/**/*.*').pipe(gulp.dest('public/build/js/'))
 });
 gulp.task('public:fonts', function () {
-	return gulp.src('build/fonts/*.*').pipe(gulp.dest('public/build/fonts/'))
+	return gulp.src('build/fonts/**/*.*').pipe(gulp.dest('public/build/fonts/'))
 });
 gulp.task('public:img', function () {
-	return gulp.src('build/img/*.*').pipe(gulp.dest('public/build/img/'))
+	return gulp.src('build/img/**/*.*').pipe(gulp.dest('public/build/img/'))
 });
 gulp.task('public:php', function () {
-	return gulp.src('php/*.*').pipe(gulp.dest('public/php/'))
+	return gulp.src('php/**/*.*').pipe(gulp.dest('public/php/'))
 });
 gulp.task('public:vendor', function () {
-	return gulp.src('vendor/*.*').pipe(gulp.dest('public/vendor/'))
+	return gulp.src('vendor/**/*.*').pipe(gulp.dest('public/vendor/'))
 });
 gulp.task('public:views', function () {
-	return gulp.src('views/*.*').pipe(gulp.dest('public/views/'))
+	return gulp.src('views/**/*.*').pipe(gulp.dest('public/views/'))
 });
 gulp.task('public:database', function () {
-	return gulp.src('database/*.*').pipe(gulp.dest('public/database/'))
+	return gulp.src('database/**/*.*').pipe(gulp.dest('public/database/'))
 });
 gulp.task('public:config', function () {
-	return gulp.src('config/*.*').pipe(gulp.dest('public/config/'))
+	return gulp.src('config/**/*.*').pipe(gulp.dest('public/config/'))
 });
 gulp.task('public:index', function () {
 	return gulp.src('index.php').pipe(gulp.dest('public/'))
